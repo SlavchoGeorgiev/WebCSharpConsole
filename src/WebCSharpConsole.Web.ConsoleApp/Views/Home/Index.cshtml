@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Console Home";
+}
+
+<div id="console-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="toolbar">
+                <button class="run-button btn btn-success btn-sm"
+                        data-loading-text="Running">
+                    Run
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row console-content">
+        <div class="col-md-7 console-code-wrapper">
+            <div class="console-code"></div>
+        </div>
+        <div class="col-md-5 console-output-wrapper">
+            <div class="console-output"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <environment names="Development">
+        <script src="~/js/console.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/console.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@section Styles
+{
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/console-page.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/console-page.min.css" />
+    </environment>
+}

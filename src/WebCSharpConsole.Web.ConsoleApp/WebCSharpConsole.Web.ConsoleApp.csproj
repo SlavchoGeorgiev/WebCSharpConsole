@@ -1,0 +1,319 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.10.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.10.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.10.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Elfie" Version="0.10.6" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="2.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
+    <None Include="wwwroot\images\banner4.svg" />
+    <None Include="wwwroot\js\console.js" />
+    <None Include="wwwroot\js\console.min.js" />
+    <None Include="wwwroot\js\loader-config-dev.js" />
+    <None Include="wwwroot\js\loader-config-min.js" />
+    <None Include="wwwroot\js\monaco-theme-from-json.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\site.min.js" />
+    <None Include="wwwroot\lib\bootstrap\CHANGELOG.md" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\Gemfile" />
+    <None Include="wwwroot\lib\bootstrap\Gemfile.lock" />
+    <None Include="wwwroot\lib\bootstrap\Gruntfile.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\.jshintrc" />
+    <None Include="wwwroot\lib\bootstrap\grunt\bs-commonjs-generator.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\bs-raw-files-generator.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\change-version.js" />
+    <None Include="wwwroot\lib\bootstrap\grunt\sauce_browsers.yml" />
+    <None Include="wwwroot\lib\bootstrap\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\bootstrap\js\.jscsrc" />
+    <None Include="wwwroot\lib\bootstrap\js\.jshintrc" />
+    <None Include="wwwroot\lib\bootstrap\js\affix.js" />
+    <None Include="wwwroot\lib\bootstrap\js\alert.js" />
+    <None Include="wwwroot\lib\bootstrap\js\button.js" />
+    <None Include="wwwroot\lib\bootstrap\js\carousel.js" />
+    <None Include="wwwroot\lib\bootstrap\js\collapse.js" />
+    <None Include="wwwroot\lib\bootstrap\js\dropdown.js" />
+    <None Include="wwwroot\lib\bootstrap\js\modal.js" />
+    <None Include="wwwroot\lib\bootstrap\js\popover.js" />
+    <None Include="wwwroot\lib\bootstrap\js\scrollspy.js" />
+    <None Include="wwwroot\lib\bootstrap\js\tab.js" />
+    <None Include="wwwroot\lib\bootstrap\js\tooltip.js" />
+    <None Include="wwwroot\lib\bootstrap\js\transition.js" />
+    <None Include="wwwroot\lib\bootstrap\less\.csslintrc" />
+    <None Include="wwwroot\lib\bootstrap\less\alerts.less" />
+    <None Include="wwwroot\lib\bootstrap\less\badges.less" />
+    <None Include="wwwroot\lib\bootstrap\less\bootstrap.less" />
+    <None Include="wwwroot\lib\bootstrap\less\breadcrumbs.less" />
+    <None Include="wwwroot\lib\bootstrap\less\button-groups.less" />
+    <None Include="wwwroot\lib\bootstrap\less\buttons.less" />
+    <None Include="wwwroot\lib\bootstrap\less\carousel.less" />
+    <None Include="wwwroot\lib\bootstrap\less\close.less" />
+    <None Include="wwwroot\lib\bootstrap\less\code.less" />
+    <None Include="wwwroot\lib\bootstrap\less\component-animations.less" />
+    <None Include="wwwroot\lib\bootstrap\less\dropdowns.less" />
+    <None Include="wwwroot\lib\bootstrap\less\forms.less" />
+    <None Include="wwwroot\lib\bootstrap\less\glyphicons.less" />
+    <None Include="wwwroot\lib\bootstrap\less\grid.less" />
+    <None Include="wwwroot\lib\bootstrap\less\input-groups.less" />
+    <None Include="wwwroot\lib\bootstrap\less\jumbotron.less" />
+    <None Include="wwwroot\lib\bootstrap\less\labels.less" />
+    <None Include="wwwroot\lib\bootstrap\less\list-group.less" />
+    <None Include="wwwroot\lib\bootstrap\less\media.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\alerts.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\background-variant.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\border-radius.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\buttons.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\center-block.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\clearfix.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\forms.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\gradients.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\grid-framework.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\grid.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\hide-text.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\image.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\labels.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\list-group.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\nav-divider.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\nav-vertical-align.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\opacity.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\pagination.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\panels.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\progress-bar.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\reset-filter.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\reset-text.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\resize.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\responsive-visibility.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\size.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\tab-focus.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\table-row.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\text-emphasis.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\text-overflow.less" />
+    <None Include="wwwroot\lib\bootstrap\less\mixins\vendor-prefixes.less" />
+    <None Include="wwwroot\lib\bootstrap\less\modals.less" />
+    <None Include="wwwroot\lib\bootstrap\less\navbar.less" />
+    <None Include="wwwroot\lib\bootstrap\less\navs.less" />
+    <None Include="wwwroot\lib\bootstrap\less\normalize.less" />
+    <None Include="wwwroot\lib\bootstrap\less\pager.less" />
+    <None Include="wwwroot\lib\bootstrap\less\pagination.less" />
+    <None Include="wwwroot\lib\bootstrap\less\panels.less" />
+    <None Include="wwwroot\lib\bootstrap\less\popovers.less" />
+    <None Include="wwwroot\lib\bootstrap\less\print.less" />
+    <None Include="wwwroot\lib\bootstrap\less\progress-bars.less" />
+    <None Include="wwwroot\lib\bootstrap\less\responsive-embed.less" />
+    <None Include="wwwroot\lib\bootstrap\less\responsive-utilities.less" />
+    <None Include="wwwroot\lib\bootstrap\less\scaffolding.less" />
+    <None Include="wwwroot\lib\bootstrap\less\tables.less" />
+    <None Include="wwwroot\lib\bootstrap\less\theme.less" />
+    <None Include="wwwroot\lib\bootstrap\less\thumbnails.less" />
+    <None Include="wwwroot\lib\bootstrap\less\tooltip.less" />
+    <None Include="wwwroot\lib\bootstrap\less\type.less" />
+    <None Include="wwwroot\lib\bootstrap\less\utilities.less" />
+    <None Include="wwwroot\lib\bootstrap\less\variables.less" />
+    <None Include="wwwroot\lib\bootstrap\less\wells.less" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\bootstrap\nuget\bootstrap.less.nuspec" />
+    <None Include="wwwroot\lib\bootstrap\nuget\bootstrap.nuspec" />
+    <None Include="wwwroot\lib\bootstrap\nuget\MyGet.ps1" />
+    <None Include="wwwroot\lib\bootstrap\package.js" />
+    <None Include="wwwroot\lib\bootstrap\README.md" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\CHANGELOG.md" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\base\worker\workerMain.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\base\worker\workerMain.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\bat.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\coffee.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\cpp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\csharp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\css.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\dockerfile.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\fsharp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\go.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\handlebars.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\html.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\ini.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\java.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\less.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\lua.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\markdown.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\msdax.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\objective-c.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\php.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\postiats.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\powershell.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\pug.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\python.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\r.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\razor.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\ruby.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\scss.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\solidity.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\sql.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\swift.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\vb.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\xml.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\basic-languages\src\yaml.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\contrib\suggest\browser\media\String_16x.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\contrib\suggest\browser\media\String_inverse_16x.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.de.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.es.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.fr.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.hu.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.it.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.ja.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.ko.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.pt-br.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.ru.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.tr.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.zh-cn.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\editor.main.nls.zh-tw.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\editor\standalone\browser\quickOpen\symbol-sprite.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\css\cssMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\css\cssWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\html\htmlMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\html\htmlWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\json\jsonMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\json\jsonWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\typescript\lib\typescriptServices.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\typescript\src\mode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\language\typescript\src\worker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\loader.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\dev\vs\loader.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\LICENSE" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\base\worker\workerMain.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.de.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.es.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.fr.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.hu.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.it.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.ja.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.ko.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.pt-br.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.ru.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.tr.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.zh-cn.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\editor\editor.main.nls.zh-tw.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min-maps\vs\loader.js.map" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\base\worker\workerMain.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\bat.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\coffee.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\cpp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\csharp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\css.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\dockerfile.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\fsharp.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\go.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\handlebars.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\html.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\ini.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\java.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\less.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\lua.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\markdown.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\msdax.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\objective-c.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\php.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\postiats.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\powershell.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\pug.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\python.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\r.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\razor.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\ruby.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\scss.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\solidity.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\sql.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\swift.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\vb.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\xml.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\basic-languages\src\yaml.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\contrib\suggest\browser\media\String_16x.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\contrib\suggest\browser\media\String_inverse_16x.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.de.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.es.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.fr.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.hu.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.it.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.ja.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.ko.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.pt-br.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.ru.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.tr.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.zh-cn.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\editor.main.nls.zh-tw.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\editor\standalone\browser\quickOpen\symbol-sprite.svg" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\css\cssMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\css\cssWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\html\htmlMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\html\htmlWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\json\jsonMode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\json\jsonWorker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\typescript\lib\typescriptServices.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\typescript\src\mode.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\language\typescript\src\worker.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\min\vs\loader.js" />
+    <None Include="wwwroot\lib\monaco-editor-0.9.0\package\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebCSharpConsole.Services.ConsoleEmulator\WebCSharpConsole.Services.ConsoleEmulator.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\lib\monaco-editor-0.9.0\package\monaco.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>
