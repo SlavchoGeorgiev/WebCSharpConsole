@@ -28,6 +28,13 @@ namespace WebCSharpConsole.Web.ConsoleApp.Controllers
         [HttpPost]
         public IActionResult GetRecommendations(string code, int index)
         {
+            var keywords = this.GetCSharpKeywords();
+            var result = keywords;
+            if (code == null)
+            {
+                return this.Ok(result);
+            }
+
             var recommendations = this.consoleApplicationEmulator.GetRecommendedSymbols(code, index);
 
             var completionItems = recommendations
@@ -52,8 +59,6 @@ namespace WebCSharpConsole.Web.ConsoleApp.Controllers
             .ThenBy(r => r.Kind)
             .ToList();
 
-            var keywords = this.GetCSharpKeywords();
-            var result = keywords;
             result.AddRange(completionItems);
 
             return this.Ok(result);
@@ -61,6 +66,11 @@ namespace WebCSharpConsole.Web.ConsoleApp.Controllers
 
         public IActionResult TestCompile(string code)
         {
+            if (code == null)
+            {
+                return this.Ok(new { Success = true });
+            }
+
             var compilationResult = this.consoleApplicationEmulator.TestCompile(code);
             if (compilationResult.Success)
             {
@@ -105,6 +115,15 @@ namespace WebCSharpConsole.Web.ConsoleApp.Controllers
 
         public async Task<IActionResult> CompileAndRun(string code)
         {
+            if (code == null)
+            {
+                return this.Ok(new CompileAndRunResponseModel()
+                {
+                    CompilationFailed = true,
+                    CompilationErrors = "Please write some code."
+                });
+            }
+
             var compilationResult = this.consoleApplicationEmulator.Compile(code);
             if (!compilationResult.Success)
             {
