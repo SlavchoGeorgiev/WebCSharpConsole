@@ -4,6 +4,7 @@
     <TargetFramework>net472</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <UserSecretsId>ae469334-ae93-4237-8005-13b747fceb40</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.0" />

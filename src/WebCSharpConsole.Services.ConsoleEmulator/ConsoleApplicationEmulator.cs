@@ -20,12 +20,13 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
     {
         private const string CompilationFolderName = "TempCompilation";
         private const string ConsoleCompilationPrefix = "ConsoleApp_";
-        private const int DefaultMaxConsoleApplicationExecutionTimeMs = 10 * 1000;
+        private const int DefaultMaxConsoleApplicationExecutionTimeMs = 30_000;
         private static readonly List<MetadataReference> defaultReferences = new List<MetadataReference>
             {
                MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
                MetadataReference.CreateFromFile(typeof(System.Linq.IQueryable).Assembly.Location),
             };
+        private readonly CSharpParseOptions cSharpParseOptions;
         private readonly long maxConsoleApplicationExecutionTimeMs;
         private readonly List<MetadataReference> references;
         private readonly string currentExecutionAssemblyFolderPath;
@@ -42,6 +43,7 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
 
         public ConsoleApplicationEmulator(long maxConsoleApplicationExecutionTimeMs)
         {
+            this.cSharpParseOptions = new CSharpParseOptions(LanguageVersion.CSharp7_3);
             this.maxConsoleApplicationExecutionTimeMs = maxConsoleApplicationExecutionTimeMs;
             this.dummyConsoleAssembly = typeof(DummyConsole.Console).Assembly;
             this.references = new List<MetadataReference>();
@@ -99,7 +101,7 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
 
         public EmitResult TestCompile(string code)
         {
-            var compilation = this.CompileCore(code);
+            (CSharpCompilation compilation, _) = this.CompileCore(code);
             var stream = new MemoryStream();
             var emitResult = compilation.Emit(stream);
 
@@ -142,9 +144,9 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
             this.appDomain = this.CreateSandbox();
         }
 
-        public IEnumerable<ISymbol> GetRecommendedSymblos(string code, int index)
+        public IEnumerable<ISymbol> GetRecommendedSymbols(string code, int index)
         {
-            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code);
+            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code, this.cSharpParseOptions);
             var syntaxTrees = new[] { syntaxTree };
             CSharpCompilation compilation = CSharpCompilation.Create(assemblyName: this.ConsoleAssemblyName,
                                                                     syntaxTrees: syntaxTrees,
@@ -176,9 +178,9 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
                 var consoleExecuteResult = new ConsoleExecutionResult();
                 try
                 {
-                    var executionTimmer = Stopwatch.StartNew();
+                    var executionTimer = Stopwatch.StartNew();
                     consoleExecuteResult.ConsoleOutput = consoleExecutor.Execute();
-                    consoleExecuteResult.ExecutionTimeMs = executionTimmer.ElapsedMilliseconds;
+                    consoleExecuteResult.ExecutionTimeMs = executionTimer.ElapsedMilliseconds;
                     consoleExecuteResult.Success = true;
 
                     return consoleExecuteResult;
@@ -204,25 +206,24 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
 
         private CSharpCompilation CompileAndMockConsole(string code)
         {
-            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code);
-            var syntaxTrees = new[] { syntaxTree };
-            CSharpCompilation compilation = this.CreateCompilation(syntaxTrees);
+            (CSharpCompilation compilation, SyntaxTree syntaxTree) = this.CompileCore(code);
 
             var visitor = new SystemConsoleRewriter(compilation.GetSemanticModel(syntaxTree));
             var newSyntaxTree = visitor.Visit(syntaxTree.GetRoot()).NormalizeWhitespace().SyntaxTree;
+            newSyntaxTree = newSyntaxTree.WithRootAndOptions(newSyntaxTree.GetRoot(), this.cSharpParseOptions);
             var newSyntaxTrees = new[] { newSyntaxTree };
             CSharpCompilation newCompilationWithMockedConsole = this.CreateCompilation(newSyntaxTrees);
 
             return newCompilationWithMockedConsole;
         }
 
-        private CSharpCompilation CompileCore(string code)
+        private (CSharpCompilation compilation, SyntaxTree syntaxTree) CompileCore(string code)
         {
-            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code);
+            SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(code, this.cSharpParseOptions);
             var syntaxTrees = new[] { syntaxTree };
             CSharpCompilation compilation = this.CreateCompilation(syntaxTrees);
 
-            return compilation;
+            return (compilation, syntaxTree);
         }
 
         private CSharpCompilation CreateCompilation(SyntaxTree[] syntaxTrees)
@@ -235,8 +236,9 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
 
         private ConsoleExecutor GetConsoleExecutor(AppDomain appDomain)
         {
-            var consoleExecutor = (ConsoleExecutor)appDomain.CreateInstanceAndUnwrap(typeof(ConsoleExecutor).Assembly.FullName,
-                                                                                     typeof(ConsoleExecutor).FullName);
+            var consoleExecutor = (ConsoleExecutor)appDomain
+                .CreateInstanceAndUnwrap(typeof(ConsoleExecutor).Assembly.FullName,
+                                         typeof(ConsoleExecutor).FullName);
             consoleExecutor.SetAssembly(this.assemblyLocation);
 
             return consoleExecutor;

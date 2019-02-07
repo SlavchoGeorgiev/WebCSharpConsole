@@ -28,7 +28,7 @@ namespace WebCSharpConsole.Web.ConsoleApp.Controllers
         [HttpPost]
         public IActionResult GetRecommendations(string code, int index)
         {
-            var recommendations = this.consoleApplicationEmulator.GetRecommendedSymblos(code, index);
+            var recommendations = this.consoleApplicationEmulator.GetRecommendedSymbols(code, index);
 
             var completionItems = recommendations
             .Select(r => new CompletionItemViewModel()

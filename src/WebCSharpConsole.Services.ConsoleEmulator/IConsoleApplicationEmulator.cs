@@ -18,7 +18,7 @@ namespace WebCSharpConsole.Services.ConsoleEmulator
 
         Task<ConsoleExecutionResult> RunAsync();
 
-        IEnumerable<ISymbol> GetRecommendedSymblos(string code, int index);
+        IEnumerable<ISymbol> GetRecommendedSymbols(string code, int index);
 
         void Recycle();
     }
